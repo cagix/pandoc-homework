@@ -26,7 +26,7 @@ TARGETDIR = ../distr/
 
 PDFOPTIONS  = -f markdown --latex-engine=xelatex
 PDFOPTIONS += --default-image-extension=pdf
-PDFOPTIONS += -V documentclass=scrartcl
+PDFOPTIONS += -V documentclass=exam -V classoption=addpoints
 PDFOPTIONS += -V fontsize=10pt -V papersize=a4
 PDFOPTIONS += -V geometry:left=2cm -V geometry:right=2cm -V geometry:top=2cm -V geometry:bottom=2.5cm
 PDFOPTIONS += --standalone --smart --number-sections
