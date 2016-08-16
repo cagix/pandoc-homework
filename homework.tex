@@ -44,6 +44,16 @@
 \newcommand{\code}[1]{\textcolor{dkgreen}{\texttt{\textbf{#1}}}\xspace}
 %------------------------------------- Listings ---------------------
 
+%------------------------------------- Questions --------------------------------
+\providecommand{\theMyQuestionTitle}{}
+\providecommand{\myQuestion}[2][0]{\renewcommand{\theMyQuestionTitle}{#2}\question[#1]}
+\qformat{\ifthenelse{\thequestion>1}{AAA}{BBB} \textbf{\large Aufgabe \thequestion: \theMyQuestionTitle \hfill \fbox{\thepoints}}}  % add only question points
+
+\renewcommand{\questionshook}{\setlength{\itemsep}{12pt}}  % extra space between questions
+
+\boxedpoints    % no effect w/ qformat
+\pointpoints{Punkt}{Punkte}
+%------------------------------------- Questions --------------------------------
 
 
 
