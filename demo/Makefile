@@ -31,6 +31,7 @@ PDFOPTIONS += -V fontsize=10pt -V papersize=a4
 PDFOPTIONS += -V geometry:left=1.5cm -V geometry:right=1.5cm -V geometry:top=2cm -V geometry:bottom=1.5cm
 PDFOPTIONS += --standalone --smart --number-sections
 PDFOPTIONS += --include-in-header=${PREFIX}/homework.tex
+PDFOPTIONS += --include-in-header=${TMP}
 #PDFOPTIONS += --listings --highlight-style=tango
 PDFOPTIONS += ${LANG} --data-dir=${DATADIR}
 
@@ -45,7 +46,7 @@ pdf:	clean $(PDF)
 
 ${ID}_%.pdf: %.md ${PREFIX}/titlepage.tex
 	pandoc --standalone --template ${PREFIX}/titlepage.tex -o ${TMP} $<
-	pandoc ${PDFOPTIONS} --include-in-header=${TMP} -o $@ $<
+	pandoc ${PDFOPTIONS} -o $@ $<
 	rm -f ${TMP}
 
 	
